@@ -5,6 +5,7 @@ const {
 } = require("selenium-webdriver");
 
 const assert = require("assert");
+var should = require("chai").should();
 
 async function example() {
     //launch the browser
@@ -22,7 +23,11 @@ async function example() {
     });
 
     //assert using node assertion 
-    assert.strictEqual(todoText, "Learn Selenium");
+    // assert.strictEqual(todoText, "Learn Selenium");
+
+    //assert using chai should
+    todoText.should.equal("Learn Selenium");
+
 
     //close the browser
     await driver.quit();
